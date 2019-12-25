@@ -1,5 +1,0 @@
----
-- hosts: prod
-  tasts:
-          - name: deploy webapp into qa server
-            copy: src=/var/lib/jenkins/workspace/cicd/index.html dest=/var/www/html
