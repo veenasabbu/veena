@@ -2,7 +2,7 @@
 - hosts: prod
   tasts:
           - name: pull docker images form registry
-            copy: docker pull veenadevops/mydevops:2.0
+            raw: docker pull veenadevops/mydevops:2.0
           
           - name: bringup container
             raw: docker run -dti --name webapp -p 80:80 veenadevops/mydevops:2.0 /bin/bash
