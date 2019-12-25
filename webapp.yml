@@ -1,5 +1,9 @@
 ---
 - hosts: prod
   tasts:
-          - name: deploy webapp into qa server
-            copy: src=/var/lib/jenkins/workspace/cicd/index.html dest=/var/www/html
+          - name: pull docker images form registry
+            copy: docker pull veenadevops/mydevops:2.0
+          
+          - name: bringup container
+            raw: docker run -dti --name webapp -p 80:80 veenadevops/mydevops:2.0 /bin/bash
+
